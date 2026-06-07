@@ -10,6 +10,7 @@
 ## Domain
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+The domain I chose is Student Reviews of Biology Professors and Courses. This system makes student-generated knowledge about biology professors and courses searchable and answerable. Students share this kind of knowledge on Rate My Professors, Reddit, and course-specific forums, but it's scattered across dozens of pages with no way to ask a plain question like "Which bio professor is best for pre-med students?" or "Is BIO 301 worth taking if you struggle with labs?" Official channels like course catalogs and department websites tell you what a course covers, not what it's actually like to take it. 
 
 ---
 
@@ -20,16 +21,16 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Rate My Professors | Student reviews of a bio professor (intro bio) | https://www.ratemyprofessors.com/professor/1751109 |
+| 2 | Rate My Professors | Student reviews of a bio professor (upper level courses) | https://www.ratemyprofessors.com/professor/889023 |
+| 3 | Rate My Professors | Student reviews of a third bio professor | https://www.ratemyprofessors.com/professor/823707 |
+| 4 | Reddit r/AdelphiUniversity | Student advice on suitability of Adelphi for premed |https://www.reddit.com/r/AdelphiUniversity/comments/1jsf5li/which_school_should_i_pick/|
+| 5 | Reddit r/premed | Student guide for undergrad premed | https://www.reddit.com/r/premed/wiki/coursework/ |
+| 6 | Reddit r/premed | Tips for excelling in Bio courses | https://www.reddit.com/r/premed/comments/y0l51b/some_advice_if_you_struggle_with_bio_classes/ |
+| 7 | Reddit r/biology | General biology course survival tips | https://www.reddit.com/r/biology/comments/ps6hkz/how_to_study_for_biology/ |
+| 8 | StudentDoctor Network | Cell Biology vs. Genetics | https://forums.studentdoctor.net/threads/cell-biology-vs-genetics.1200034/ |
+| 9 | Rate My Professors | Student reviews of a bio lab professor | https://www.ratemyprofessors.com/professor/219596 |
+| 10 | StudentDoctor Network | Clarity on Biology Course Sequence for Pre-Requisites | https://forums.studentdoctor.net/threads/clarity-on-biology-course-sequence-for-pre-requisites.1468738/ |
 
 ---
 
