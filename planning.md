@@ -41,11 +41,16 @@ The domain I chose is Student Reviews of Biology Professors and Courses. This sy
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:** 300 tokens
 
-**Overlap:**
+**Overlap:** 50 tokens
 
-**Reasoning:**
+**Reasoning:** 
+My corpus is a mix of short-form content (RMP reviews averaging 2-5 sentences) and longer forum posts (Reddit threads, StudentDoctor discussions spanning several paragraphs). A uniform 300-token chunk size was chose for simplicity and consistency across document types - it captures one complete thought or review without splitting it awkwardly, while staying small enough that retreieved chunks remain focused and relevant. 
+
+A more sophisticated approach would use heterogenous chunking: smaller chunks (~150 tokens) for RMP reviews since each review is already a self-contained unit, and larger chunks (~350 tokens) for Reddit and forum posts where ideas build across multiple sentences. This would reduce the risk of merging two different students' opinions into one chunk for short reviews, and preserve more reasoning context for longer posts. This is noted as a potential improvement if retrieval quality is poor during evaluation. 
+
+The 50-token overlap ensures that ideas spanning a chunk boundary aren't lost, this matters especially for forum posts where a recommendation might build across sentences that could otherwise land in separate chunks. 
 
 ---
 
@@ -57,11 +62,16 @@ The domain I chose is Student Reviews of Biology Professors and Courses. This sy
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model:** all-MiniLM-L6-v2 (via sentence-transformers)
 
-**Top-k:**
+**Top-k:** 4
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** 
+all-MiniLM-L6-v2 is a strong choice for this project because it runs locally, is free, and performs well on short English text like reviews and forum posts. In a real production system I'd weigh the following tradeoffs:
+- Context length: MiniLM handles up to 256 tokens per input, which fits most reviews but could truncate longer forum posts. A model like text-embedding-3-small (OpenAI) supports longer inputs.
+- Accuracy on domain-specific text: General-purpose embeddings may miss biology-specific terminology. A biomedical embedding model (e.g. BioBERT-based) could improve retrieval on technical course content. 
+- Multilingual support: Not needed for this corpus, but models like multilingual-e5 would matter for a system serving international students.
+- Latency and cost: Local models like MiniLM have zero API cost and low latency. API-based models (OpenAI, Cohere) offer higher accuracy but add cost and network dependency. 
 
 ---
 
@@ -74,11 +84,11 @@ The domain I chose is Student Reviews of Biology Professors and Courses. This sy
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | What do students say about the workload in into biology courses? | Reviews mention heavy memorization, frequent quizzes, and cumulative exams |
+| 2 | What study strategies do premed students recommend for difficult bio courses? | Active recall, spaced repetition, forming study groups, doing practice problems early |
+| 3 | Do students consider Cell Biology or Genetics to be the harder course? | StudentDoctor thread indicates Cell Biology is generally considered harder due to conceptual depth |
+| 4 | What do students say about professor availability outside of class in the biology department? | RMP reviews mention office hours responsiveness and email reply times |
+| 5 | What biology courses do premed students say are most useful for MCAT preparation? | r/premed sources cite Cell Biology, Genetics, and Biochemistry as highest-yield for MCAT |
 
 ---
 
@@ -88,9 +98,9 @@ The domain I chose is Student Reviews of Biology Professors and Courses. This sy
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Noisy web content: RMP and Reddit pages contain navigation menus, upvite counts, usernames, timestamps, and ads mixed in with the actual review text. If ingestion doesn't clean this out properly, chunks will contain irrelevant text that confuses retrieval - a query about professor grading style could retrieve a chunk that's mostly page navigation boilerplate. 
 
-2.
+2. Short reviews splitting poorly: Many RMP reviews are only 2-3 sentences. If a review lands across a chunk boundary, the retrieved chunk may contains half a review about one professor and half about another, making it hard for the LLM to generate a coerent, attributed answer. This is a direct risk to cource citation accuracy. 
 
 ---
 
@@ -101,6 +111,44 @@ The domain I chose is Student Reviews of Biology Professors and Courses. This sy
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+```mermaid
+flowchart TD
+    A[📄 Raw Documents\nRMP Reviews · Reddit Threads · StudentDoctor Forums] --> B
+
+    subgraph Ingestion
+        B[BeautifulSoup + manual .txt files\nStrip ads · nav · usernames · timestamps]
+    end
+
+    subgraph Chunking
+        C[LangChain RecursiveCharacterTextSplitter\nChunk size: 300 tokens · Overlap: 50 tokens]
+    end
+
+    subgraph Embedding
+        D[all-MiniLM-L6-v2\nvia sentence-transformers]
+    end
+
+    subgraph Vector Store
+        E[(ChromaDB\nLocal vector database)]
+    end
+
+    subgraph Retrieval
+        F[Semantic Similarity Search\nTop-k = 4 chunks]
+    end
+
+    subgraph Generation
+        G[Claude API\nGrounded system prompt · Source citations]
+    end
+
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H[💬 Answer + Source Citations]
+
+    I[🙋 User Question] --> F
+```
 
 ---
 
@@ -117,7 +165,19 @@ The domain I chose is Student Reviews of Biology Professors and Courses. This sy
      with my specified chunk size and overlap" is a plan. -->
 
 **Milestone 3 — Ingestion and chunking:**
+Tool: Claude
+Input: 10 source URLs, cleaning requirements and my chunking strateg section
+Expected output: `ingest.py` script that fetches and cleans each source into `/data`, and `chunk.py` using RecursiveCharacterTextSplitter (chunk_size=300, overlap=50) with source filename attached as metadata
+Verification: Read 3 output files to confirm no boilerplate, print 5 chunks to confirm each is coherent and has a source filename attached.
 
 **Milestone 4 — Embedding and retrieval:**
+Tool: Claude
+Input: My Retrieval Approach Section (all-Mini-LM-L6-v2, ChromaDB, top-k=4)
+Expected output: `embed.py` that stores chunks in ChromaDB, and `retrieve.py` that returns top 4 relevant chunks with source metadata for any query
+Verification: Run all 5 evaluation questions through `retrieve.py` and confirm returned chunks are actually relevant to each question.
 
 **Milestone 5 — Generation and interface:**
+Tool: Claude
+Input: Generation requirements (Claude API, grounded prompt, citations required) and `retrieve.py` output
+Expected output: `query.py` that retrieves chunks, calls Claude API, and returns a cited answer, plus a simple CLI or web interface
+Verification: Run all 5 evaluation questions end-to-end and confirm every answer includes source citations and no information outside the retrieved chunks
