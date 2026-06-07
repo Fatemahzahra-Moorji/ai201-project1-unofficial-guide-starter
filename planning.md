@@ -165,19 +165,19 @@ flowchart TD
      with my specified chunk size and overlap" is a plan. -->
 
 **Milestone 3 — Ingestion and chunking:**
-Tool: Claude
-Input: 10 source URLs, cleaning requirements and my chunking strateg section
-Expected output: `ingest.py` script that fetches and cleans each source into `/data`, and `chunk.py` using RecursiveCharacterTextSplitter (chunk_size=300, overlap=50) with source filename attached as metadata
-Verification: Read 3 output files to confirm no boilerplate, print 5 chunks to confirm each is coherent and has a source filename attached.
+- Tool: Claude
+- Input: 10 source URLs, cleaning requirements and my chunking strateg section
+- Expected output: `ingest.py` script that fetches and cleans each source into `/data`, and `chunk.py` using RecursiveCharacterTextSplitter (chunk_size=300, overlap=50) with source filename attached as metadata
+- Verification: Read 3 output files to confirm no boilerplate, print 5 chunks to confirm each is coherent and has a source filename attached.
 
 **Milestone 4 — Embedding and retrieval:**
-Tool: Claude
-Input: My Retrieval Approach Section (all-Mini-LM-L6-v2, ChromaDB, top-k=4)
-Expected output: `embed.py` that stores chunks in ChromaDB, and `retrieve.py` that returns top 4 relevant chunks with source metadata for any query
-Verification: Run all 5 evaluation questions through `retrieve.py` and confirm returned chunks are actually relevant to each question.
+- Tool: Claude
+- Input: My Retrieval Approach Section (all-Mini-LM-L6-v2, ChromaDB, top-k=4)
+- Expected output: `embed.py` that stores chunks in ChromaDB, and `retrieve.py` that returns top 4 relevant chunks with source metadata for any query
+- Verification: Run all 5 evaluation questions through `retrieve.py` and confirm returned chunks are actually relevant to each question.
 
 **Milestone 5 — Generation and interface:**
-Tool: Claude
-Input: Generation requirements (Claude API, grounded prompt, citations required) and `retrieve.py` output
-Expected output: `query.py` that retrieves chunks, calls Claude API, and returns a cited answer, plus a simple CLI or web interface
-Verification: Run all 5 evaluation questions end-to-end and confirm every answer includes source citations and no information outside the retrieved chunks
+- Tool: Claude
+- Input: Generation requirements (Claude API, grounded prompt, citations required) and `retrieve.py` output
+- Expected output: `query.py` that retrieves chunks, calls Claude API, and returns a cited answer, plus a simple CLI or web interface
+- Verification: Run all 5 evaluation questions end-to-end and confirm every answer includes source citations and no information outside the retrieved chunks
