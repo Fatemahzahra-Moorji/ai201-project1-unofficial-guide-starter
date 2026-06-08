@@ -19,7 +19,7 @@ def chunk_documents(documents):
     for doc in documents:
         pieces = splitter.split_text(doc["text"])
         for piece in pieces:
-            if piece.strip():
+            if len(piece.strip()) >= 100:
                 chunks.append({"source": doc["source"], "text": piece})
 
     return chunks
