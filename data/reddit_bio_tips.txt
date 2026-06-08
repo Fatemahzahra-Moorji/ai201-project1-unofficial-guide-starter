@@ -1,0 +1,48 @@
+Some advice if you struggle with Bio classes.
+
+So many of my classmates study the same way they studied when they were freshmen - take notes during lectures, review the notes a million times, read the learning objectives a million times, and then review the notes yet again... and then pray that the exam goes well.
+
+This is NOT how to succeed in Biology classes. Please understand: YOU MUST QUIZ YOURSELF. You must practice pulling information OUT of your head, not just putting information into it. Here are some general steps you can follow that might help you out. I set up the steps with the assumption that you are preparing for an exam.
+
+Step 1: Exposure
+
+This is the only part where you will review lecture notes, learning objectives, coursepack, etc. You don't need to read your notes a million times over!!! Up to 3 times is fine for most people because you will refer back to it when you start quizzing yourself.
+My thoughts on taking notes in class: Not everyone can take notes while actively listening to what the professor is saying. I know I can't, so I don't take notes in class. Don't take notes just because everyone around you is doing it - take notes during lectures if you feel like you need to.
+
+Step 2: Setting up
+
+What are we setting up exactly? We are setting things up so that you can quiz yourself. This involves making YOUR OWN Quizlets, Anki decks, answering learning objectives in your own words, making practice questions, etc.
+A note about quizlets and anki: make flashcards that actually make you think critically (i.e. cloze deletions AKA fill-in-the-blanks, multiple choice, matching, labeling a diagram or image, etc.). My favorite way to make flashcards is fill-in-the-blanks because they are easy to make and force you to think about the details of the information rather than just generally knowing them.
+This part will probably take the longest amount of time. It is tedious and will require you to refer back to your textbook and notebooks A LOT to make sure that the flashcards or practice questions you make are accurate and thorough.
+A bit of advice here: only use primary sources - if you are having a hard time finding a piece of information in the textbook and notes, don't just resort to google. Talk to classmates or the professor. This is what office hours are for. Google is the last resort and probably won't even cover the scope or nuances of your class content anyway.
+
+Step 3: Quizzing yourself
+
+The hard part is done. All you have to do is quiz yourself using the materials that you have built. Go over your quizlets, Anki decks, etc. as many times as it takes to feel like you know them in and out, backward and forwards.
+This is also the time to do any practice quizzes or practice exams if your professor was kind enough to make them!
+A bit of advice here: after you take a practice exam, be able to explain to yourself why the correct answer is correct, and why the incorrect answer choices are incorrect.
+I like to copy and paste the practice exam into a google doc and actually type explanations underneath each answer choice. You don't have to take it this far, though.
+Important note: it is normal and actually a good thing to struggle. Learning happens the most when you struggle. When you are staring at a flashcard or practice question that you have no idea of the answer to, fight the temptation to immediately look it up. THINK ABOUT IT. Try your absolute best to work it out a logical answer your head before giving up on it. If you struggle first and then look up the answer, there is a much higher chance of it sticking.
+I hope this helps at least one person out there struggling in their Biology classes. I think it's safe to say that most of my classmates study much more than me in terms of hours spent. Try to study efficiently so that you have more time to enjoy the day, get good sleep, and be more awake and fresh on the day of an exam.
+
+I also want to add that most people's brains do not learn by reviewing a page of notes over and over again. Think about your favorite TV show - when you watch Grey's Anatomy or Game of Thrones, you know all of the characters along with their personalities, quirks, and story. Do you know these things because you made a page of notes about it? No! You know it because you saw the characters interact in all kinds of new contexts, and THAT is why it is effective to quiz yourself - it forces you to look at the information in different contexts.
+
+If you are already doing fine in your classes, then ignore my post entirely. You are doing what works for you and don't let anyone tell you that you are doing it wrong. Everyone learns differently.
+
+Here's a thought that might be helpful: In order to do well in a class, you don't have to know everything. You need to know the major concepts and anything that the professor emphasizes.
+
+TL'DR: It's much easier to succeed in Biology classes if you quiz yourself. Yes, expose yourself to the material by reading over your notes, but that is step 1, if not step 0. Make anki cards or quizlets, write up answers to the learning objectives in your own words, and spend your time studying those rather than your lecture notes. Quizzing yourself will force you to struggle and see the information in contexts in which you'll have to think critically. Reading over your notes makes you FEEL like you are learning, but to be honest -> Struggling = learning.
+
+I agree with all your tips! I’m an engineering graduate (+ PhD student, nontrad premed) and all throughout my engineering career it’s all just learning to apply concepts, but for bio classes you gotta memorize!
+
+So what I started doing is flash cards, mnemonics, summaries, doing small chunks of memorizing a day, quizzing with my friend group, and also then applying the concepts in an engineering-y manner later on in the future (like in my research or in difficult troubleshooting questions / case studies).
+
+It's nice to hear that this applies to other subjects as well! And yea exactly just being able to apply the knowledge into new contexts is so helpful!
+
+You can upgrade this to the next level by finding a partner and taking turns asking each other questions that (i) could reasonably be on the exam and (ii) are as difficult as possible. Between each question (set a fixed time limit), take a brief period to gain more material from the textbook / notes / lecture slides.
+
+This will poke at any blind spots that you forgot / didn’t know would be on the exam / missed in lecture / are buried in the Canvas files. You won’t have to worry that you are accidentally going too easy on yourself and you will learn by explaining the solution if the other person can’t figure it out. This friendly arms race of difficult questions naturally motivates understanding and a diversity of questions (since your collaborator will not quiz you on things they realize you are good at).
+
+This approach parallels generative adversarial networks, a machine learning technique responsible for the success of programs like AlphaGo, Stockfish, deepfakes, computer art.
+
+Excellent point. Having another brain to make you think critically is huge, as that is exactly what a professor is doing when they test you!
